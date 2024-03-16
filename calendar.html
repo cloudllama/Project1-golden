@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Generate calendar rows dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Get the current date
+        var currentDate = new Date();
+
+        // Get the current month
+        var currentMonth = currentDate.getMonth();
+
+        // Get the number of days in the current month
+        var daysInMonth = new Date(currentDate.getFullYear(), currentMonth + 1, 0).getDate();
+
+        // Get the first day of the current month
+        var firstDay = new Date(currentDate.getFullYear(), currentMonth, 1).getDay();
+
+        // Generate calendar rows dynamically
+        var calendarBody = document.querySelector('tbody');
+        var row = document.createElement('tr');
+
+        // Add empty cells for the days before the first day of the month
+        for (var i = 0; i < firstDay; i++) {
+            var cell = document.createElement('td');
+            row.appendChild(cell);
+        }
+
+        // Add cells for each day of the month
+        for (var day = 1; day <= daysInMonth; day++) {
+            var cell = document.createElement('td');
+            cell.textContent = day;
+            row.appendChild(cell);
+
+            // Start a new row after every 7 cells (one week)
+            if (row.children.length === 7) {
+                calendarBody.appendChild(row);
+                row = document.createElement('tr');
+            }
+        }
+
+        // Add the last row to the calendar
+        calendarBody.appendChild(row);
+    </script>
+</body>
+</html>
