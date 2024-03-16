@@ -7,3 +7,4 @@ We find that the amazing thing is that wonder is all around us.
 * Point 2
 
 We're adding a new feature, feature A.
+Europeans start the week on Monday.
