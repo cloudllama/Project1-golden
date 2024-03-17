@@ -8,4 +8,5 @@ We find that the amazing thing is that wonder is all around us.
 
 We're adding a new feature, feature A.
 Europeans start the week on Monday.
-We're now on GitHub!
+
+We've found that catsup can be spelled multiple ways. Who knew?
